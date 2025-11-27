@@ -1,0 +1,263 @@
+{% load static %}
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+   {% block title %}
+   Peacock Social Media
+    Document
+   {% endblock title %}
+    </title>
+    <meta name="keywords" content="Peacock Website, Social Media, Connect, Share, Community">
+    <meta name="description" content="Welcome to Peacock Social Media, your go-to platform for connecting with friends and sharing moments. Join us today and be part of our vibrant community!">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+{% tailwind_css %}
+  
+</head>
+<body class="bg-black text-white font-sans leading-normal tracking-normal px-5 py-5">
+
+<nav class=" flex items-center border mx-4 max-md:w-full max-md:justify-between border-slate-700 px-6 py-4 rounded-full text-white text-sm">
+    
+    
+    <a href="https://peacock-social-media.shivamdixit.engineer" target="_blank" class="flex items-center gap-2">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="50" height="50" aria-labelledby="title desc" role="img">
+  <title id="title">Peacock Logo</title>
+  <desc id="desc">Stylized peacock logo with peacock-color tail and eye motifs.</desc>
+
+  <defs>
+    <!-- Gradient for tail feathers -->
+    <linearGradient id="tg1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0fb7a6"/>
+      <stop offset="50%" stop-color="#007fae"/>
+      <stop offset="100%" stop-color="#0b4e7a"/>
+    </linearGradient>
+
+    <!-- Highlight gradient for feather 'eye' ring -->
+    <radialGradient id="eyeGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#ffd66b"/>
+      <stop offset="55%" stop-color="#f8a43a"/>
+      <stop offset="100%" stop-color="#c77a17"/>
+    </radialGradient>
+
+    <!-- subtle shadow under body -->
+    <filter id="fShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feOffset dx="0" dy="2" result="off"/>
+      <feGaussianBlur in="off" stdDeviation="2" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.25 0" result="shadow"/>
+      <feBlend in="SourceGraphic" in2="shadow" mode="normal"/>
+    </filter>
+
+    <!-- stroke style for smooth edges -->
+    <style type="text/css"><![CDATA[
+      .feather { stroke: none; }
+      .body { filter: url(#fShadow); }
+    ]]></style>
+  </defs>
+
+  <!-- Tail group: rotated feathers -->
+  <g transform="translate(100,95)" aria-hidden="true">
+    <!-- draw 7 feathers with rotation offsets -->
+    <!-- feather template: path (simple leaf) + eye circles -->
+    <!-- We'll create them with incremental rotations -->
+    <g id="feathers">
+      <!-- Feather 1 (leftmost) -->
+      <g transform="rotate(-60)">
+        <path class="feather" d="M0 -8 C -28 -45 -45 -70 -60 -92 C -22 -76 10 -46 0 -8 Z" fill="url(#tg1)" opacity="0.98"/>
+        <!-- 'eye' motif -->
+        <circle cx="-38" cy="-62" r="9" fill="url(#eyeGrad)"/>
+        <circle cx="-38" cy="-62" r="5.2" fill="#093a3a"/>
+        <circle cx="-37" cy="-63" r="2.1" fill="#ffffff" opacity="0.9"/>
+      </g>
+
+      <!-- Feather 2 -->
+      <g transform="rotate(-40)">
+        <path class="feather" d="M0 -6 C -22 -35 -34 -55 -48 -75 C -18 -62 8 -36 0 -6 Z" fill="url(#tg1)" opacity="0.98"/>
+        <circle cx="-32" cy="-52" r="8.4" fill="url(#eyeGrad)"/>
+        <circle cx="-32" cy="-52" r="4.7" fill="#093a3a"/>
+        <circle cx="-31.2" cy="-52.6" r="1.9" fill="#fff" opacity="0.95"/>
+      </g>
+
+      <!-- Feather 3 -->
+      <g transform="rotate(-20)">
+        <path class="feather" d="M0 -4 C -18 -25 -28 -40 -40 -55 C -14 -46 7 -30 0 -4 Z" fill="url(#tg1)" opacity="0.99"/>
+        <circle cx="-25" cy="-38" r="7.4" fill="url(#eyeGrad)"/>
+        <circle cx="-25" cy="-38" r="4.1" fill="#093a3a"/>
+        <circle cx="-24.4" cy="-38.6" r="1.5" fill="#fff" opacity="0.95"/>
+      </g>
+
+      <!-- Feather 4 (center) -->
+      <g transform="rotate(0)">
+        <path class="feather" d="M0 0 C -16 -18 -24 -28 -34 -40 C -10 -36 6 -22 0 0 Z" fill="url(#tg1)"/>
+        <circle cx="-18" cy="-28" r="7.8" fill="url(#eyeGrad)"/>
+        <circle cx="-18" cy="-28" r="4.4" fill="#093a3a"/>
+        <circle cx="-17.3" cy="-28.7" r="1.6" fill="#fff" opacity="0.95"/>
+      </g>
+
+      <!-- Feather 5 -->
+      <g transform="rotate(20)">
+        <path class="feather" d="M0 -4 C 18 -25 28 -40 40 -55 C 14 -46 -7 -30 0 -4 Z" fill="url(#tg1)" opacity="0.99"/>
+        <circle cx="25" cy="-38" r="7.4" fill="url(#eyeGrad)"/>
+        <circle cx="25" cy="-38" r="4.1" fill="#093a3a"/>
+        <circle cx="24.4" cy="-38.6" r="1.5" fill="#fff" opacity="0.95"/>
+      </g>
+
+      <!-- Feather 6 -->
+      <g transform="rotate(40)">
+        <path class="feather" d="M0 -6 C 22 -35 34 -55 48 -75 C 18 -62 -8 -36 0 -6 Z" fill="url(#tg1)" opacity="0.98"/>
+        <circle cx="32" cy="-52" r="8.4" fill="url(#eyeGrad)"/>
+        <circle cx="32" cy="-52" r="4.7" fill="#093a3a"/>
+        <circle cx="31.2" cy="-52.6" r="1.9" fill="#fff" opacity="0.95"/>
+      </g>
+
+      <!-- Feather 7 (rightmost) -->
+      <g transform="rotate(60)">
+        <path class="feather" d="M0 -8 C 28 -45 45 -70 60 -92 C 22 -76 -10 -46 0 -8 Z" fill="url(#tg1)" opacity="0.98"/>
+        <circle cx="38" cy="-62" r="9" fill="url(#eyeGrad)"/>
+        <circle cx="38" cy="-62" r="5.2" fill="#093a3a"/>
+        <circle cx="37" cy="-63" r="2.1" fill="#fff" opacity="0.9"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Body + head -->
+  <g transform="translate(100,118)" class="body" fill="#0b4e7a">
+    <!-- body (teardrop) -->
+    <path d="M0 -18 C -24 -18 -36 -4 -36 14 C -36 38 -6 48 0 48 C 6 48 36 38 36 14 C36 -4 24 -18 0 -18 Z" />
+    <!-- chest highlight -->
+    <path d="M-10 -6 C -6 2 2 14 10 18 C -2 10 -8 -2 -10 -6 Z" fill="#0fb7a6" opacity="0.12"/>
+    <!-- neck/head -->
+    <g transform="translate(-6,-28)">
+      <circle cx="12" cy="6" r="8" fill="#007fae"/>
+      <!-- eye (white + pupil) -->
+      <circle cx="14.3" cy="5.5" r="2.3" fill="#ffffff"/>
+      <circle cx="14.9" cy="5.6" r="1.05" fill="#093a3a"/>
+      <!-- beak -->
+      <path d="M20 8 L28 6 L20 4 Z" fill="#f3b25a"/>
+      <!-- crest -->
+      <g transform="translate(6,-6)">
+        <path d="M0 0 C -4 -6 -2 -12 2 -10 C 6 -8 6 -2 2 2 Z" fill="#0fb7a6"/>
+        <path d="M8 0 C 4 -6 6 -12 10 -10 C 14 -8 14 -2 10 2 Z" fill="#0fb7a6"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- small grounding shadow -->
+  <ellipse cx="100" cy="160" rx="36" ry="6" fill="#000" opacity="0.10"/>
+
+
+</svg>
+
+    </a>
+    <div class="hidden md:flex items-center gap-6 ml-7">
+        <a href="#" class="relative overflow-hidden h-6 group">
+            <span class="block group-hover:-translate-y-full transition-transform duration-300">Profile</span>
+            <span
+                class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Profile</span>
+        </a>
+        <a href="#" class="relative overflow-hidden h-6 group">
+            <span class="block group-hover:-translate-y-full transition-transform duration-300">Map</span>
+            <span
+                class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Map</span>
+        </a>
+        <a href="#" class="relative overflow-hidden h-6 group">
+            <span class="block group-hover:-translate-y-full transition-transform duration-300">Community</span>
+            <span
+                class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Community</span>
+        </a>
+        <a href="#" class="relative overflow-hidden h-6 group">
+            <span class="block group-hover:-translate-y-full transition-transform duration-300">Messages</span>
+            <span
+                class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Messages</span>
+        </a>
+    </div>
+
+
+    <div class="ml-auto md:flex items-center gap-4">
+    <form method="get" action="{% url 'squawk:search_squawks' %}">
+    <button class="bg-gray-800 p-3 rounded-2xl hover:bg-green-700 text-white px-3 py-1  text-sm font-medium transition duration-300" type="submit">
+    Search:
+    </button> 
+     <input type="text" name="q" placeholder="Search" class="rounded-md border p-2 border-gray-300 px-3 py-1" />
+    </form>
+     </div>
+   
+    
+    
+    <div class="ml-auto md:flex items-center gap-4">
+{% if not user.is_authenticated %}
+        <a href="{% url 'squawk:login' %}"
+            class="border border-slate-600 cursor-pointer hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition">
+            Login
+        </a>
+         <button
+            class="bg-white hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-100 transition duration-300">Signup </button>
+    
+{% else %}
+<form method="post" action="{% url 'squawk:logout' %}">{% csrf_token %} 
+<button
+            class="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition">
+            Logout
+        </button>
+</form>
+{% endif %}
+       </div>
+    <button id="menuToggle" class="md:hidden text-gray-600">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+    <div id="mobileMenu" class="absolute hidden top-48 text-base left-0 bg-black w-full flex-col items-center gap-4">
+        <a class="hover:text-indigo-600" href="#">
+            Products
+        </a>
+        <a class="hover:text-indigo-600" href="#">
+            Customer Stories
+        </a>
+        <a class="hover:text-indigo-600" href="#">
+            Pricing
+        </a>
+        <a class="hover:text-indigo-600" href="#">
+            Docs
+        </a>
+        <button
+            class="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition">
+            Contact
+        </button>
+        <button
+            class="bg-white hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-100 transition duration-300">
+            Get Started
+        </button>
+    </div>
+</nav>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        }
+    });
+</script>
+
+
+<br>
+
+<div class="container">
+
+{% block content %}
+{% endblock content %}
+</div>
+    
+</body>
+</html>
