@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-1m@1ot$!%mvd7k-$rcw#3+t#e25vt!b75#8*kna67@$lb-%6wz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['peacock-socialsharing-base-production.up.railway.app']
 
 
 # Application definition
