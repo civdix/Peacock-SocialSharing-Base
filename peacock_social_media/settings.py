@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-1m@1ot$!%mvd7k-$rcw#3+t#e25vt!b75#8*kna67@$lb-%6wz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['peacock-socialsharing-base-production.up.railway.app', 'peacock.shivamdixit.engineer']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,13 +42,10 @@ INSTALLED_APPS = [
     "squawk",
     "tailwind",
     "tailwind_theme",
-
-
-
     "django_browser_reload",
 ]
 
-INTERNAL_IPS = ['127.0.0.1']
+INTERNAL_IPS = ['*']
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
 TAILWIND_APP_NAME = 'tailwind_theme'
