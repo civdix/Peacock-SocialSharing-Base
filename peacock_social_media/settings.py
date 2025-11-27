@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-1m@1ot$!%mvd7k-$rcw#3+t#e25vt!b75#8*kna67@$lb-%6wz"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['peacock-socialsharing-base-production.up.railway.app']
+ALLOWED_HOSTS = ['peacock-socialsharing-base-production.up.railway.app', 'peacock.shivamdixit.engineer']
 
 
 # Application definition
@@ -60,12 +60,14 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware"
 
 
 
     "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 ROOT_URLCONF = "peacock_social_media.urls"
 
@@ -132,7 +134,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = '/static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
